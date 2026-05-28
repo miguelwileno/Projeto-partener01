@@ -41,10 +41,19 @@ header {
 
 }
 
+a:hover {
+    color: rgb(234, 166, 20);
+    transition: 0.9s;
+      
+}
+
 section {
     display: flex;
     justify-content: center;
-    align-content: space-between;
+    align-content: center;
+    gap: 40px;
+    padding: 40px 20px;
+    min-height: 80vh;
 }
 
 h3 {
@@ -55,10 +64,11 @@ h3 {
 }
 
 h1 {
-    font-size: 5.62rem;
+    font-size: clamp(2rem, 5vw, 5.62rem);
     font-weight: 700;
     margin: 10px;
     padding: 10px;
+    color: rgb(234, 166, 20);
 
 }
 
@@ -66,6 +76,7 @@ p {
     margin: 10px;
     padding: 10px;
     width: 50%;
+    text-align: justify;
     justify-content: center;
 
 }
@@ -73,7 +84,8 @@ p {
 .img-logo {
     width: 50%;
     padding: 0px;
-    height: auto;
+    height: 100%;
+    object-fit: contain;
 }
 
 .icons-contatos {
@@ -82,16 +94,24 @@ p {
 
 .redes-sociais {
     margin-bottom: 40px;
-    
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+    margin: 20px 10px 40px 10px;
+
 }
 
 .botoes {
     display: flex;
-    gap: 200px;
-    justify-content: center;
-    border-radius: 10px;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: flex-start;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
 }
-
 #contato,
 #projeto {
     font-size: 28px;
@@ -104,11 +124,50 @@ p {
     background-color: aliceblue;
 }
 
+#contato:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+    background-color: rgb(234, 166, 20);
+}
+#projeto:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+    background-color: rgb(234, 166, 20);
+}
+
 
 footer {
     color: #ffff;
-    position: fixed;
-    bottom: 10px;
-    width: 100%;
+    position: relative;
+    padding: 5px;
     text-align: center;
+}
+
+@media (max-width: 768px) {
+    section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .img-logo {
+        width: 80%;
+    }
+
+    p {
+        width: 90%;
+    }
+
+    .menu {
+        gap: 5px;
+        font-size: 18px;
+    }
+
+    a {
+        font-size: 20px;
+    }
+
+    .botoes {
+        justify-content: center;
+    }
+
 }
